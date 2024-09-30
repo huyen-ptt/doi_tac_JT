@@ -2420,18 +2420,15 @@
 	border-left: 1px solid rgba(110,110,110,0.5);
 }
 
-.flat-filter.style-1 li a:hover {
-	color: #f63440;
-}
+
 
 .flat-filter.style-1 li.active a:hover {
 	color: #fff;
 }
 
 .flat-filter.style-1 li.active a {
-	background-color: #f63440;
+	background-image: linear-gradient(to right bottom, #44459b, #474b9f, #4a51a3, #4d57a6, #505daa, #5364af, #566cb4, #5a73b8, #5e7dbf, #6487c6, #6a91cc, #719bd2) !important;
 	color: #fff;
-	border-color: #f63440;
 }
 
 
