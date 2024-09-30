@@ -197,7 +197,7 @@ a {
 
 a:hover,
 a:focus {
-	color: #f63440;
+	color: black;
 	text-decoration: none;
 	outline: 0;
 	-webkit-transition: all 0.3s ease-in-out;
@@ -223,7 +223,12 @@ b, strong {
 button {
 	border: none;
 }
-
+.title1{
+	color: #03294c !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    margin-bottom: 10px !important;
+}
 button,
 input[type="button"],
 input[type="reset"],
@@ -240,7 +245,12 @@ input[type="submit"] {
          -o-transition: all 0.3s ease 0s;
             transition: all 0.3s ease 0s;
 }
-
+button{
+	background-image: linear-gradient(to right bottom, #44459b, #474b9f, #4a51a3, #4d57a6, #505daa, #5364af, #566cb4, #5a73b8, #5e7dbf, #6487c6, #6a91cc, #719bd2) !important;
+}
+button:hover{
+	background-image: linear-gradient(to right bottom, #44459b, #474b9f, #4a51a3, #4d57a6, #505daa, #5364af, #566cb4, #5a73b8, #5e7dbf, #6487c6, #6a91cc, #719bd2) !important;
+}
 select,
 textarea,
 input[type="text"],
@@ -943,7 +953,7 @@ h6 { font-size: 14px; line-height: 48px; font-weight: 400;}
  #site-header-inner {
 	position: relative; 
 	height: 100%;
-	padding: 31px 0px 32px;
+	/* padding: 31px 0px 32px; */
 }
 
 .header-absolute .header {
@@ -2486,25 +2496,40 @@ article .more-link a:hover:after {
 
 .widget.widget-link ul li a {
 	line-height: 36px;
-	font-weight: 500;
+	font-weight: 400;
 	color: #333333;
 }
 
 .widget.widget-link.link-login {
 	margin:  3px 0px 0px 31px;
 }
-
-.widget.widget-link.link-faq {
-	margin-left: 68px;
+.inner-group{
+	position: relative;
 }
-
+.fa-envelope{
+	position: absolute;
+    left: 10px;
+    top: 17px;
+}
+#subscribe-email{
+	padding-left: 33px;
+}
+/* .widget.widget-link.link-faq {
+	margin-left: 68px;
+} */
+.inner-socials .fa-brands{
+	font-size: 20px;
+	margin-right: 10px;
+	padding-top: 10px;
+}
+/* 
 .widget.widget-brand {
 	margin:  10px 0px 0px 55px;
-}
+} */
 
-.widget.widget-brand .logo-footer {
+/* .widget.widget-brand .logo-footer {
 	margin-bottom: 16px;
-}
+} */
 
 .widget.widget-brand .flat-contact li {
 	line-height: 28px;
@@ -2512,7 +2537,7 @@ article .more-link a:hover:after {
 }
 
 .widget.widget-link ul li a:hover {
-	color: #f63440;
+	color: #333333;
 }
 
 /* Footer bottom
@@ -2612,10 +2637,15 @@ article .more-link a:hover:after {
 } 
 
 .bg-section.row-1 {
-	background: url('../images/LpDfdfxl95RI.jpg') no-repeat center center ;
+	background: url('https://cdn.save.moe/b/0VYUmVj.png') no-repeat center center ;
 	background-size: cover;
+	height: 450px;
 }
-
+.bg-section.row-222 {
+	background: url('https://cdn.save.moe/b/dbghtb21.png') no-repeat center center ;
+	background-size: cover;
+	height: 450px;
+}
 .bg-section.row-2 {
 	background: url('../images/Ggfb6vSe5vrs.jpg') no-repeat center center ;
 	background-size: cover;

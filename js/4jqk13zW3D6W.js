@@ -4,57 +4,7 @@ window.console = window.console || function() {
    return e
 }();
 
-$(document).ready(function() {
-	var e =  '<div class="switcher-container">'+
-               '<h2>STYLE SWITCHER<a href="#" class="sw-click"><i class="fa fa-cog"></i></a></h2>'+
-               '<div class="selector-box">'+
-                    '<div class="clearfix"></div>'+
-                    '<div class="sw-odd">'+
-                    '<div class="sw-image">'+
-                        '<a href="#">'+
-                            '<img src="images/wordpress-version.png" alt="img"/>'+
-                        '</a>'+
-                        '<button name="button" type="submit" class="flat-button sw-buy">Buy Now</button>'+
-                    '</div>'+
-                    '<h3>SCHEME COLOR</h3>'+
-                    '<div class="ws-colors">'+
-                        '<a href="#color1" class="styleswitch" id="color1">'+
-                            '&nbsp;<span class="cl1"></span>'+
-                        '</a>'+
-                        '<a href="#color2" class="styleswitch" id="color2">'+
-                            '&nbsp;<span class="cl2"></span>'+
-                        '</a>'+
-                        '<a href="#color3" class="styleswitch" id="color3">'+
-                            '&nbsp;<span class="cl3"></span>'+
-                        '</a>'+
-                        '<a href="#color3" class="styleswitch" id="color4">'+
-                            '&nbsp;<span class="cl4"></span>'+
-                        '</a>'+
-                        
-                    '</div></div>'+
-                    '<div class="sw-even"><h3>Layout:</h3>'+
-                        '<a href="#" class="sw-light">BOX</a>' +
-                        '<a href="#" class="sw-dark">WIDE</a>' +
-                    '</div>'+                      
-                    '<div class="sw-pattern pattern"><h3>Background pattern:</h3>'+
-                        '<a href="#" class="sw-pattern" data-image="images/pattern/1.png"><img src="images/pattern/1.png" alt="image"></a>' +
-                        '<a href="#" class="sw-pattern" data-image="images/pattern/2.png"><img src="images/pattern/2.png" alt="image"></a>' +
-                        '<a href="#" class="sw-pattern" data-image="images/pattern/3.png"><img src="images/pattern/3.png" alt="image"></a>' +
-                        '<a href="#" class="sw-pattern" data-image="images/pattern/4.png"><img src="images/pattern/4.png" alt="image"></a>' +
-                        '<a href="#" class="sw-pattern" data-image="images/pattern/5.png"><img src="images/pattern/5.png" alt="image"></a>' +
-                        '<a href="#" class="sw-pattern" data-image="images/pattern/6.png"><img src="images/pattern/6.png" alt="image"></a>' +
-                        '<a href="#" class="sw-pattern" data-image="images/pattern/7.png"><img src="images/pattern/7.png" alt="image"></a>' +
-                        '<a href="#" class="sw-pattern" data-image="images/pattern/8.png"><img src="images/pattern/8.png" alt="image"></a>' +
-                        '<a href="#" class="sw-pattern" data-image="images/pattern/9.png"><img src="images/pattern/9.png" alt="image"></a>' +
-                        '<a href="#" class="sw-pattern" data-image="images/pattern/10.png"><img src="images/pattern/10.png" alt="image"></a>' +
-                    '</div>'+               
-                  '<div class="clearfix"></div>'+
-               '</div>'+
-            '</div>';
-	$('body').append(e);
-	switchAnimate.loadEvent();
-	switchColor.loadEvent();
-    });
+
 
     var switchColor = {
     colorObj: {
