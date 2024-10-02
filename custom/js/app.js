@@ -30,7 +30,7 @@ var r = {
             $(this).addClass('active');
 
             let serviceId = $(this).data('serviceid');
-            r.onLoadProductByServiceId20(serviceId,20); // Gọi với 20% giảm giá
+            r.onLoadProductByServiceId20(serviceId, 20); // Gọi với 20% giảm giá
         });
     },
     onLoadPromotions: function () {
@@ -73,16 +73,15 @@ var r = {
                 //Tim den ul de dan li vao 
 
                 let ul = $('.discount-30');
-                let html = ""
-                html += `<li class="active discount-30-service-button" data-serviceid='0'><a href="javascript:void(0)" class="" >All Product</a></li>`
-                response.forEach(r => {
-                    html += `<li class="discount-30-service-button" data-serviceid='${r.id}'><a href="javascript:void(0)" class="">${r.name}</a></li>`
-                })
+                let html = "";
+                response.forEach((r, index) => {
+                    let activeClass = r.id === 1281 ? 'active' : '';
+                    html += `<li class="discount-30-service-button ${activeClass}" data-serviceid='${r.id}'><a href="javascript:void(0)" class="">${r.name}</a></li>`;
+                });
                 ul.append(html);
-                //Mac dinh sau append ra thi load all
-                r.onLoadProductByServiceId(0);
+                
+                r.onLoadProductByServiceId(1281);
                 r.registerEvent();
-                // console.log(response);
             },
             error: function (error) {
                 console.log(error);
@@ -105,13 +104,18 @@ var r = {
             dataType: 'json', // Định dạng dữ liệu phản hồi mong muốn
             success: function (response) {
                 let ul = $('.discount-20');
-                let html = ""
-                html += `<li class="active discount-20-service-button" data-serviceid='0'><a href="javascript:void(0)" class="" >All Product</a></li>`
+                let html = "";
+            
+                // Loop qua danh sách response để tạo các li
                 response.forEach(r => {
-                    html += `<li class="discount-20-service-button" data-serviceid='${r.id}'><a href="javascript:void(0)" class="">${r.name}</a></li>`
-                })
+                    let activeClass = r.id === 1279 ? 'active' : '';
+                    html += `<li class="discount-20-service-button ${activeClass}" data-serviceid='${r.id}'><a href="javascript:void(0)" class="">${r.name}</a></li>`;
+                });
+            
                 ul.append(html);
-                r.onLoadProductByServiceId20(0);
+            
+                r.onLoadProductByServiceId20(1279);
+            
                 r.registerEvent();
             },
             error: function (error) {
@@ -119,7 +123,7 @@ var r = {
             }
         });
     },
-    
+
     onLoadProductByServiceId20: function (id) {
         let url = r.baseApi + "/api/OpenAPI/GetProductsInServicesByCouponCode";
         let data = {
@@ -145,17 +149,22 @@ var r = {
                                     <img src="${r.baseUrl + res.avatar}" alt="${res.title}">
                                 </a>
                             </div>
-                            <div class="product-info text-center clearfix hah">
-                                <div class="product-title">${res.title}</div>
+                            <div class="product-info clearfix hah">
+                                <a href="${r.link + res.id + '/' + res.url}">
+                                   <div class="product-title">${res.title}</div>
+                                </a>
+                                <div class="asd inner-tag">${res.tag}</div>
+                                <div class="inner-rating cach"><div class="inner-rating"><div class="inner-stars"><i class="fa-solid fa-star"></i></div><div class="inner-number">${res.star}</div></div> | <div><div class="inner-rating">${res.totalBooking} Booked</div></div></div>
                                 <div class="price">
-                                    <ins>
+                                    
+                                    <span class="from">From<span>
                                         <span class="amount">VND ${res.price.toLocaleString()}</span>
-                                    </ins>
+                                    
                                 </div>
+	
+                                <div class="small-foreign-currency" style="justify-content:end;display:flex;color: #03294c;"><span><small>~ USD  </small>${(res.price / 25500).toFixed(1)}</span></div>
                             </div>
-                            <div class="add-to-cart text-center">
-                                <a href="${r.link + res.id + '/' + res.url}">READ DETAIL</a>
-                            </div>
+                          
                         </li>
                     `
                     html += htmlItem;
@@ -169,7 +178,7 @@ var r = {
             }
         });
     },
-    
+
     onLoadProductByServiceId: function (id) {
         let url = r.baseApi + "/api/OpenAPI/GetProductsInServicesByCouponCode"
         let data = {
@@ -189,24 +198,29 @@ var r = {
                 let html = "";
                 response.forEach(res => {
                     let htmlItem = `
-                        <li class="product-item">
+                       <li class="product-item">
+                          
                             <div class="product-thumb clearfix">
                                 <a href="${r.link + res.id + '/' + res.url}" class="product-thumb">
                                     <img src="${r.baseUrl + res.avatar}" alt="${res.title}">
                                 </a>
                             </div>
-                            <div class="product-info text-center clearfix">
-                                <div class="product-title">${res.title}</div>
+                            <div class="product-info clearfix hah">
+                                <a href="${r.link + res.id + '/' + res.url}">
+                                   <div class="product-title">${res.title}</div>
+                                </a>
+                                <div class="asd inner-tag">${res.tag}</div>
+                                <div class="inner-rating cach"><div class="inner-rating"><div class="inner-stars"><i class="fa-solid fa-star"></i></div><div class="inner-number">${res.star}</div></div> | <div><div class="inner-rating">${res.totalBooking} Booked</div></div></div>
                                 <div class="price">
-                                    <ins>
+                                    
+                                    <span class="from">From<span>
                                         <span class="amount">VND ${res.price.toLocaleString()}</span>
-                                    </ins>
+                                    
                                 </div>
-                                
+	
+                                <div class="small-foreign-currency" style="justify-content:end;display:flex;color: #03294c;"><span><small>~ USD  </small>${(res.price / 25500).toFixed(1)}</span></div>
                             </div>
-                            <div class="add-to-cart text-center">
-                                <a href="${r.link + res.id + '/' + res.url}">READ DETAIL</a>
-                            </div>
+                          
                         </li>
                     
                     `
